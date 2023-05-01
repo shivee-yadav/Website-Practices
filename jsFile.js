@@ -1,6 +1,8 @@
 //Document object model is used when we need to modify html by using js
 
 const taskContainer = document.querySelector(".task__container");
+const globalStore=[];//array of objects
+
 console.log(taskContainer);
 
 const saveChanges = () => {
@@ -34,8 +36,21 @@ const saveChanges = () => {
 
     taskContainer.insertAdjacentHTML("beforeend", newCard);
 
+    globalStore.push(taskData);
+    localStorage.setItem("tasky",JSON.stringify({cards:globalStore}));// stringify converts object of objects to array of objects,cards is a random key and globalStore is the value
+
 
 
 };
 //Parent of any DOM is document
 //Date.now gives a unique id
+
+//Issues
+
+//1.Page refreshes causes the data to be deleted:
+//API->Application Programming Interface
+//Local storage->accessing application via local storage
+//Interface->Interface means middle man
+
+
+//2.Features-Delete,search,edit
