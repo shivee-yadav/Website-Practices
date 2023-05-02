@@ -5,6 +5,24 @@ const globalStore=[];//array of objects
 
 console.log(taskContainer);
 
+const loadInitialCardData = () => {
+    //local storage to get tasky card data
+    const getCardData= localStorage.getItem("tasky");
+
+    //convert to normal object
+    const {cards} =JSON.parse(getCardData);
+
+
+    //loop over those array of task object to create HTML card,inject it in to DOM
+    cards.map((cardObject) => {
+        taskContainer.insertAdjacentHTML("beforeend",newCard(cardObject));
+    }
+    
+    )
+
+    //update our globalStore
+};
+
 const saveChanges = () => {
     const taskData = {
         id: `${Date.now()}`,  //$ is used because we're storing something dynamic
