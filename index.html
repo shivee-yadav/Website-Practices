@@ -22,9 +22,9 @@
     <title>Document</title>
 </head>
 
-<body onload="loadInitialCardData">
+<body onload="loadInitialCardData()">
     <!-- Modal -->
-    <div class="modal" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
@@ -36,31 +36,32 @@
                         <label for="imageurl">Image URL</label>
                         <input type="url" class="form-control" id="imageurl" aria-describedby="Image URL"
                             placeholder="http://example.com//img.png">
-                        
+
                     </div>
                     <div class="form-group mt-3">
                         <label for="tasktitle">Task Title</label>
                         <input type="text" class="form-control" id="tasktitle" aria-describedby="Task Title"
                             placeholder="Enter Task Type">
-                        
+
                     </div>
                     <div class="form-group mt-3">
                         <label for="tasktype">Task Type</label>
                         <input type="text" class="form-control" id="tasktype" aria-describedby="Task Type"
                             placeholder="Enter Task Type">
-                        
+
                     </div>
                     <div class="form-group mt-3">
                         <label for="taskdescription">Task Description</label>
-                        <textarea rows="6" type="text" class="form-control" id="taskdescription" aria-describedby="Task Description"
-                            placeholder="Enter task Description"></textarea>
-                        
+                        <textarea rows="6" type="text" class="form-control" id="taskdescription"
+                            aria-describedby="Task Description" placeholder="Enter task Description"></textarea>
+
                     </div>
 
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary" onclick="saveChanges()" data-bs-dismiss="modal">Save changes</button>
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal" onclick="saveChanges()">Save
+                        changes</button>
                 </div>
             </div>
         </div>
@@ -106,10 +107,16 @@
             </div>
         </div>
         <div class="row task__container">
-            
+
         </div>
     </div>
-    <script src="jsFile.js"></script>
+    <script src="jsFile.js" >
+      
+    </script>
 </body>
 
 </html>
+<!-- $('#myModal').on('hidden.bs.modal', function (e) {
+
+    $('#yourForm').find("input[type=text], textarea").val("");
+}) -->
